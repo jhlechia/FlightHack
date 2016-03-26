@@ -9,8 +9,16 @@ class FlightsController < ApplicationController
     redirect_to @flight
   end
 
+  def index
+    @flights = Flight.all
+  end
+
+  def show
+    @flight = Flight.find(params[:id])
+  end
+
   private
     def flight_params
-      params.require(:flight).permit(:origin, :destination, :departure_date, :departure_time, :return_date, :return_time)
+      params.require(:flight).permit(:origin, :destination, :airline, :flight_number, :departure_date, :departure_time, :return_date, :return_time)
     end
 end

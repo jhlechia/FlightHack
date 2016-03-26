@@ -5,7 +5,7 @@
       <%= pluralize(@flight.errors.count, "error") %> prohibited new flight from being saved:
     </h2>
     <ul>
-      <% @flights.errors.full_messages.each do |msg| %>
+      <% @flight.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
     </ul>
@@ -19,6 +19,14 @@
 <p>
   <%= f.label :destination %>
   <%= f.text_field :destination %>
+</p>
+<p>
+  <%= f.label :airline %>
+  <%= f.text_field :airline %>
+</p>
+<p>
+  <%= f.label :flight_number %>
+  <%= f.text_field :flight_number %>
 </p>
 <p>
   <%= f.label :departure_date %>
