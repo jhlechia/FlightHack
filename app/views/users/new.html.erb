@@ -1,32 +1,4 @@
 <h1>It's about time you started traveling smart.</h1>
 <p>Let's get you signed up!</p>
 
-<%=  form_for :user, url: users_path do |f| %>
-<p>
-  <%= f.label :first_name %><br>
-  <%= f.text_field :first_name %>
-</p>
-<p>
-  <%= f.label :last_name %><br>
-  <%= f.text_field :last_name %>
-</p>
-<p>
-  <%= f.label :birthday  %><br>
-  <%= f.date_field :birthday %>
-</p>
-<p>
-  <%= f.label :username %><br>
-  <%= f.text_field :username %>
-</p>
-<p>
-  <%= f.label :passsword  %><br>
-  <%= f.text_field :password %>
-</p>
-<p>
-  <%= f.label :password_confirm  %><br>
-  <%= f.text_field :password_confirm %>
-</p>
-<p>
-  <%= f.submit %>
-</p>
-<% end %>
+<%= render 'form' %>

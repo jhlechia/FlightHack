@@ -1,5 +1,8 @@
 <h1> Your FlightHack Profile </h1>
 <p>
+  <%= image_tag @user.avatar.url(:medium) %>
+</p>
+<p>
   <%= @user.first_name %>
 </p>
 <p>
@@ -11,3 +14,5 @@
 <p>
 <%= @user.birthday %>
 </p>
+
+<%= link_to 'Edit Profile', edit_user_path %>
