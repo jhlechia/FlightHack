@@ -22,11 +22,11 @@
 </p>
 <p>
   <%= f.label :departure_date %>
-  <%= f.text_field :departure_date %>
+  <%= f.date_field :departure_date %>
 </p>
 <p>
   <%= f.label :departure_time %>
-  <%= f.date_field :departure_time %>
+  <%= f.time_field :departure_time %>
 </p>
 <p>
   <%= f.label :return_date %>
@@ -34,7 +34,7 @@
 </p>
 <p>
   <%= f.label :return_time %>
-  <%= f.text_field :return_time %>
+  <%= f.time_field :return_time %>
 </p>
 <p>
   <%= f.submit %>
