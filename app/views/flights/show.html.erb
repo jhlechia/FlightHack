@@ -1,0 +1,25 @@
+<h2>Flight Details</h2>
+
+<p>
+  <strong>Origin: </strong><%= @flight.origin %>
+</p>
+<p>
+  <strong>Destination: </strong> <%= @flight.destination %>
+</p>
+<p>
+  <strong>Departure Date: </strong><%= @flight.departure_date %>
+</p>
+<p>
+<strong>Departure Time: </strong><%= @flight.departure_time %>
+</p>
+<p>
+<strong>Return Date: </strong><%= @flight.return_date %>
+</p>
+<p>
+<strong>Return Time: </strong><%= @flight.return_time %>
+</p>
+<p>
+<strong>Layover: </strong><%= @flight.layover? %>
+</p>
+
+<%= link_to 'Edit Flight Info', edit_flight_path(@flight) %>
