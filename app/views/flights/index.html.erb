@@ -1,1 +1,28 @@
 <h1>Current Flights for Sale</h1>
+
+<table>
+  <tr>
+    <th>Origin</th>
+    <th>Destination</th>
+    <th>Departure_date</th>
+    <th>Departure_time</th>
+    <th>Return_date</th>
+    <th>Return_time</th>
+    <th>Layover</th>
+    <th colspan="2"></th>
+  </tr>
+
+  <% @flights.each do |flight| %>
+   <tr>
+     <td><%= flight.origin %></td>
+     <td><%= flight.destination %></td>
+     <td><%= flight.departure_date %></td>
+     <td><%= flight.departure_time %></td>
+     <td><%= flight.return_date %></td>
+     <td><%= flight.return_time %></td>
+     <td><%= flight.layover? %></td>
+     <td><%= link_to 'Show', flight_path(flight) %></td>
+     <td><%= link_to 'Edit', edit_flight_path(flight) %></td>
+   </tr>
+ <% end %>
+</table>

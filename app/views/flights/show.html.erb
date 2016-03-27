@@ -22,4 +22,5 @@
 <strong>Layover: </strong><%= @flight.layover? %>
 </p>
 
-<%= link_to 'Edit Flight Info', edit_flight_path(@flight) %>
+<%= link_to 'Edit Flight Info', edit_flight_path(@flight) %><br>
+<%= link_to 'All Flights', flights_path(@flight) %>
