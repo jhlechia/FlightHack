@@ -3,6 +3,10 @@ class FlightsController < ApplicationController
     @flight = Flight.new
   end
 
+  def edit
+    @flight = Flight.find(params[:id])
+  end
+
   def create
     @flight = Flight.new(flight_params)
     @flight.save
@@ -17,6 +21,14 @@ class FlightsController < ApplicationController
     @flight = Flight.find(params[:id])
   end
 
+  def update
+    if @flight.update(flight_params)
+      redirect_to @flight
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     @flight = Find.find(params[:id])
     @flight.destroy
@@ -26,6 +38,6 @@ class FlightsController < ApplicationController
 
   private
     def flight_params
-      params.require(:flight).permit(:origin, :destination, :airline, :flight_number, :departure_date, :departure_time, :return_date, :return_time)
+      params.require(:flight).permit(:origin, :destination, :airline, :flight_number, :departure_date, :departure_time, :return_date, :return_time, :layover)
     end
 end
