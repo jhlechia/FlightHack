@@ -17,6 +17,13 @@ class FlightsController < ApplicationController
     @flight = Flight.find(params[:id])
   end
 
+  def destroy
+    @flight = Find.find(params[:id])
+    @flight.destroy
+
+    redirect_to flights_path
+  end
+
   private
     def flight_params
       params.require(:flight).permit(:origin, :destination, :airline, :flight_number, :departure_date, :departure_time, :return_date, :return_time)
