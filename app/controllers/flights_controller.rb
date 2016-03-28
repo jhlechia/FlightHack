@@ -22,6 +22,7 @@ class FlightsController < ApplicationController
   end
 
   def update
+    @flight = Flight.find(params[:id])
     if @flight.update(flight_params)
       redirect_to @flight
     else
@@ -30,7 +31,7 @@ class FlightsController < ApplicationController
   end
 
   def destroy
-    @flight = Find.find(params[:id])
+    @flight = Flight.find(params[:id])
     @flight.destroy
 
     redirect_to flights_path

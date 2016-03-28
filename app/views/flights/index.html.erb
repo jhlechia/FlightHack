@@ -4,6 +4,8 @@
   <tr>
     <th>Origin</th>
     <th>Destination</th>
+    <th>Airline</th>
+    <th>Flight Number</th>
     <th>Departure_date</th>
     <th>Departure_time</th>
     <th>Return_date</th>
@@ -16,6 +18,8 @@
    <tr>
      <td><%= flight.origin %></td>
      <td><%= flight.destination %></td>
+     <td><%= flight.airline %></td>
+     <td><%= flight.flight_number %></td>
      <td><%= flight.departure_date %></td>
      <td><%= flight.departure_time %></td>
      <td><%= flight.return_date %></td>
@@ -29,3 +33,5 @@
    </tr>
  <% end %>
 </table>
+
+<%= link_to 'Add a Flight', new_flight_path(@flight) %>
