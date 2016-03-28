@@ -1,4 +1,6 @@
+<%= content_tag_for(:li, flight) do %>
 <p>
   <strong>Flight Number:</strong>
-  <%= @flight.flight_number %>
+  <%= link_to @flight.flight_number, flight %>
 </p>
+<% end %>
