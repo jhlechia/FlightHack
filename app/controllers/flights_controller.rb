@@ -15,10 +15,14 @@ class FlightsController < ApplicationController
 
   def index
     @flights = Flight.all
+    @flight = Flight.new
   end
 
   def show
     @flight = Flight.find(params[:id])
+    if request.xhr?
+      render '_flight', layout: false, locals: { flight: @flight }
+    end
   end
 
   def update
