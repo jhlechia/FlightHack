@@ -11,8 +11,13 @@ class UsersController < ApplicationController
   def create
     #  render plain: params[:user].inspect
      @user = User.new(user_params)
-     @user.save
-     redirect_to @user
+     if @user.save
+       log_in @user
+       flash[:success] = "Welcome to the Flight Hack!"
+       redirect_to @user
+     else
+       render 'new'
+    end
   end
 
   def show
