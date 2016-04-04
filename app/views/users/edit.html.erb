@@ -1,4 +1,53 @@
 <h1>Editing User</h1>
 
-<%= render 'form' %>
+<%=  form_for @user, html: { multipart: true } do |f| %>
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@user.errors.count, "error") %> prohibited
+      new user from being saved:
+    </h2>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<p>
+  <%= f.label :first_name %><br>
+  <%= f.text_field :first_name %>
+</p>
+<p>
+  <%= f.label :last_name %><br>
+  <%= f.text_field :last_name %>
+</p>
+<p>
+  <%= f.label :birthday  %><br>
+  <%= f.date_field :birthday %>
+</p>
+<p>
+  <%= f.label :username %><br>
+  <%= f.text_field :username %>
+</p>
+<p>
+  <%= f.label :passsword  %><br>
+  <%= f.text_field :password %>
+</p>
+<p>
+  <%= f.label :password_confirm  %><br>
+  <%= f.text_field :password_confirm %>
+</p>
+<p>
+  <%= f.file_field :avatar %>
+<p>
+<h3> Click to Switch On/Off Admin
+<%= f.check_box :admin %></h3>
+<p>
+  <%= f.submit %>
+</p>
+<% end %>
+
+
 <%= link_to 'Cancel', @user %>
