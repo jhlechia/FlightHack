@@ -17,6 +17,10 @@ class UsersController < ApplicationController
   def show
   end
 
+  def index
+    @users = User.all
+  end
+
   def update
     if @user.update(user_params)
       redirect_to @user
