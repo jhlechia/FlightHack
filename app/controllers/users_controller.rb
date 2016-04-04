@@ -18,6 +18,10 @@ class UsersController < ApplicationController
   def show
   end
 
+  def index
+    @users = User.all
+  end
+
   def update
     if @user.update(user_params)
       redirect_to @user
@@ -32,6 +36,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :birthday, :username, :password, :password_confirm, :avatar)
+      params.require(:user).permit(:first_name, :last_name, :birthday, :username, :password, :password_confirm, :avatar, :admin)
     end
 end
