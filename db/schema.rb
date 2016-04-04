@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160404121032) do
+ActiveRecord::Schema.define(version: 20160404140539) do
 
   create_table "bids", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20160404121032) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.boolean  "admin"
+    t.string   "email"
   end
 
 end
