@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160404145444) do
+ActiveRecord::Schema.define(version: 20160405213311) do
 
   create_table "bids", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20160404145444) do
     t.boolean  "admin"
     t.string   "email"
     t.string   "password_digest"
+    t.string   "remember_digest"
   end
 
 end
