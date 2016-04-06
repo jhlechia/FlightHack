@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [:edit, :show, :update]
+
   def new
     @user = User.new
   end
@@ -10,8 +11,13 @@ class UsersController < ApplicationController
   def create
     #  render plain: params[:user].inspect
      @user = User.new(user_params)
-     @user.save
-     redirect_to @user
+     if @user.save
+       log_in @user
+       flash[:success] = "Welcome to Flight Hack!"
+       redirect_to @user
+     else
+       render 'new'
+    end
   end
 
   def show
@@ -35,6 +41,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :birthday, :username, :password, :password_confirm, :avatar, :admin)
+      params.require(:user).permit(:first_name, :last_name, :birthday, :email, :username, :password, :password_confirm, :avatar, :admin)
     end
 end
