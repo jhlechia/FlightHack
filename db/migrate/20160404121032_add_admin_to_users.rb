@@ -3,6 +3,6 @@ class AddAdminToUsers < ActiveRecord::Migration
     add_column :users, :admin, :boolean
   end
   def admin?
-  self.admin
+  self.admin == "1"
   end
 end

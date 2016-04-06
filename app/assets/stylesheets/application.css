@@ -14,6 +14,6 @@
  *= require_self
  */
 
- .alert-login {
+ .alert-danger {
    color: red;
  }
