@@ -35,6 +35,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def admin?
+  self.admin == "1"
+  end
+
   private
     def find_user
       @user = User.find(params[:id])

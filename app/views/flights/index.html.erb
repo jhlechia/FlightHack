@@ -1,6 +1,8 @@
 <h1>Add A Flight</h1>
 
-<%= render 'form' if admin %>
+<% if current_user.try(:admin?) %>
+<%= render 'form' %>
+<% end %>
 
 <h1>Current Flights for Sale</h1>
 
