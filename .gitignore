@@ -16,4 +16,7 @@
 !/log/.keep
 /tmp
 
+# Ignore Environment Configuration Files
+.env
+
 notes.txt
