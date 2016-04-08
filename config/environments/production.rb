@@ -2,12 +2,14 @@ Rails.application.configure do
 #specifying AWS configuration variables for our production environment
 
   # Settings specified here will take precedence over those in config/application.rb.
-config.paperclip_defaults = {
-  bucket: ENV['AWS_S3_BUCKET'],
-  access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-  secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_credentials: {
+    bucket: ENV['AWS_S3_BUCKET'],
+    access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+    secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
+    }
   }
-}
   # Code is not reloaded between requests.
   config.cache_classes = true
 
