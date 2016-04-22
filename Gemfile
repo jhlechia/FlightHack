@@ -31,7 +31,7 @@ gem "paperclip", "~> 4.3.6"
 gem 'bcrypt', '~> 3.1.7'
 
 #Used for interacting with S3
-gem 'aws-sdk', '~> 2'
+gem 'aws-sdk', '< 2.0'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
