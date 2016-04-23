@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :bids
-  has_many :flights
+  has_many :flights, :through => :bids
   attr_accessor :remember_token
   before_save { self.username = username.downcase }
 

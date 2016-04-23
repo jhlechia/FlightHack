@@ -1,4 +1,4 @@
 class Bid < ActiveRecord::Base
-  belongs_to :flights
-  belongs_to :users
+  belongs_to :user
+  belongs_to :flight
 end
