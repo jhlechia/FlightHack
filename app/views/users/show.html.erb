@@ -20,5 +20,9 @@
 <% if current_user.try(:admin?) %>
 <%= link_to 'Flight Inventory', flights_path(@user) %>
 <% else %>
+<h2>Current Bids:</h2>
+<strong>Flight Number:</strong>
+<%= link_to @user.flight.flight_number %>
+</p>
 <%= link_to 'Bid on Flights', flights_path(@user) %>
 <% end %>
