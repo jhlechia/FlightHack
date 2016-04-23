@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405213311) do
+ActiveRecord::Schema.define(version: 20160423121413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,12 @@ ActiveRecord::Schema.define(version: 20160405213311) do
   create_table "bids", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "flight_id"
   end
+
+  add_index "bids", ["flight_id"], name: "index_bids_on_flight_id", using: :btree
+  add_index "bids", ["user_id"], name: "index_bids_on_user_id", using: :btree
 
   create_table "flights", force: :cascade do |t|
     t.string   "origin"
@@ -54,4 +59,6 @@ ActiveRecord::Schema.define(version: 20160405213311) do
     t.string   "remember_digest"
   end
 
+  add_foreign_key "bids", "flights"
+  add_foreign_key "bids", "users"
 end
